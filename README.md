@@ -1,0 +1,2 @@
+# CBE & Result Management Portal
+ This is a personal project aimed at simplifying the exam conduct and result system of any school. Please note that the database contains a lot of empty tables for which values may have to be manually inserted directly into. Specifically for staff, subject, and class registeration. Exams however can be set from the staff portal, and results can also be entered for students from the staff portal.
