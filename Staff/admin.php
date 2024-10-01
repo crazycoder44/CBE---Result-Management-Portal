@@ -34,14 +34,15 @@ if (isset($_SESSION['email'])) {
 include_once 'dbConnection.php';
 $ref = @$_GET['q'];
 $email = $_POST['uname'];
-$password = $_POST['password'];
+$password=md5($_POST['password']);
+#$password = $_POST['password'];
 
 // Escaping special characters for security
 $email = mysqli_real_escape_string($con, stripslashes($email));
 $password = mysqli_real_escape_string($con, stripslashes($password));
 
 // Select the necessary fields from the admin table
-$result = mysqli_query($con, "SELECT fname, staffid FROM admin WHERE email = '$email' AND password = '$password'") or die('Error: ' . mysqli_error($con));
+$result = mysqli_query($con, "SELECT fname, staffid FROM staff WHERE email = '$email' AND password = '$password'") or die('Error: ' . mysqli_error($con));
 $count = mysqli_num_rows($result);
 
 if ($count == 1) {

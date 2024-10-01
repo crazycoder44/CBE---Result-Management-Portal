@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2024 at 02:51 PM
+-- Generation Time: Sep 24, 2024 at 06:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `test`
+-- Database: `tests`
 --
 
 -- --------------------------------------------------------
@@ -342,6 +342,27 @@ INSERT INTO `subjects` (`sub_id`, `subject`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `superadmin`
+--
+
+CREATE TABLE `superadmin` (
+  `id` int(11) NOT NULL,
+  `UserName` varchar(100) DEFAULT NULL,
+  `Password` varchar(100) DEFAULT NULL,
+  `updationDate` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `superadmin`
+--
+
+INSERT INTO `superadmin` (`id`, `UserName`, `Password`, `updationDate`) VALUES
+(1, 'admin', 'fcea920f7412b5da7be0cf42b8c93759', '2024-03-10 10:30:57'),
+(3, 'walson', '65dd18a67977a86c0646f77b2393551a', '2024-03-10 10:30:57');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `terms`
 --
 
@@ -422,6 +443,12 @@ ALTER TABLE `subjects`
   ADD PRIMARY KEY (`sub_id`);
 
 --
+-- Indexes for table `superadmin`
+--
+ALTER TABLE `superadmin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `terms`
 --
 ALTER TABLE `terms`
@@ -444,6 +471,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `subjects`
   MODIFY `sub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `superadmin`
+--
+ALTER TABLE `superadmin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `terms`
