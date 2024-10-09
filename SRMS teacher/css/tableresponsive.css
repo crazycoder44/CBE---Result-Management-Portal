@@ -1,0 +1,23 @@
+/* Fixed table container to allow both horizontal and vertical scrolling */
+.table-responsive-fixed {
+    position: relative;
+    width: 100%;
+    max-height: 500px; /* Set a max-height for vertical scrolling */
+    overflow-x: auto;  /* Horizontal scrolling */
+    overflow-y: auto;  /* Vertical scrolling */
+    padding-bottom: 20px; /* Adds space for the horizontal scrollbar */
+}
+
+.table-responsive-fixed::-webkit-scrollbar {
+    width: 15px;    /* Custom width for the vertical scrollbar */
+    height: 15px;   /* Custom height for the horizontal scrollbar */
+}
+
+.table-responsive-fixed::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.table-responsive-fixed::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
